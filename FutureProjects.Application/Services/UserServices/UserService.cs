@@ -44,6 +44,7 @@ namespace FutureProjects.Application.Services.UserServices
 
             var result = users.Select(model => new UserViewModel
             {
+                id = model.Id,
                 Name = model.Name,
                 Email = model.Email,
                 Role = model.Role,

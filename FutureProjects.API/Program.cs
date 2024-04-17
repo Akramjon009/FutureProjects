@@ -1,4 +1,3 @@
-
 using FutureProjects.Application;
 using FutureProjects.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
