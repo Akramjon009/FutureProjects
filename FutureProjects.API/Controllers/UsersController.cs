@@ -25,6 +25,12 @@ namespace FutureProjects.API.Controllers
 
             return Ok(result);
         }
+        [HttpGet("GetUserById")]
+        public async Task<ActionResult<UserViewModel>> GetUserById(int id)
+        {
+            var result = await _userService.GetById(id);
+            return Ok(result);
+        }  
 
         [HttpPost]
         public async Task<ActionResult<IEnumerable<User>>> CreateUser(UserDTO model)
@@ -39,5 +45,13 @@ namespace FutureProjects.API.Controllers
             var result = await _userService.Update(id, user);
             return Ok(result);
         }
+        [HttpDelete]
+        public async Task<bool> DeleteUserById(int id)
+        {
+            var result = await _userService.Delete(x => x.Id == id);
+
+            return result;
+        }
+
     }
 }

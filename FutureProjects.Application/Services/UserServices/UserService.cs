@@ -90,15 +90,15 @@ namespace FutureProjects.Application.Services.UserServices
 
             if (res != null)
             {
-                var user = new User()
-                {
-                    Name = userDTO.Name,
-                    Email = userDTO.Email,
-                    Login = userDTO.Login,
-                    Password = userDTO.Password,
-                    Role = userDTO.Role,
-                };
-                var result = await _userRepository.Update(user);
+
+
+                res.Name = userDTO.Name;
+                res.Email = userDTO.Email;
+                res.Login = userDTO.Login;
+                res.Password = userDTO.Password;
+                res.Role = userDTO.Role;
+               
+                var result = await _userRepository.Update(res);
 
                 return result;
             }
